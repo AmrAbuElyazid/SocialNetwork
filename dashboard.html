@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	<div class="row" loading="loading">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<textarea class="form-control" rows="5" ng-model="post" required="required"></textarea>
+			<button ng-click="newPost()" type="button" class="btn btn-large btn-block btn-default">Post</button>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" ng-repeat="post in posts | orderBy: '-created_at'">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title"><a href="/#/user/{{post.uid}}">{{post.username}}</a> - <span style="font-style: italic; color: grey">{{post.created_at | relativeDate}}</span></h3>
+				</div>
+				<div class="panel-body">
+					{{post.post}}
+					<hr>
+					<p style="color: grey"><b>Like | Comment | Share</b></p>
+					<center><span style="color: grey; font-style: italic">No Comments Yet!</span></center>
+				</div>
+			</div>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">You Friends</h3>
+				</div>
+				<div class="panel-body">
+					Amr Mohamed <span style="color: green; font-style: italic"> - Online</span>
+				</div>
+			</div>
+			</div>
+	</div>
+</div>

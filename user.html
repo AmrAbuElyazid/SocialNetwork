@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<div class="panel panel-info" loading="loading">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{user[0].name}}</h3>
+				</div>
+				<div class="panel-body">
+					Email address: {{user[0].email}}
+					<div ng-show="user_id != currentUser.uid" ng-init="checkFriendshipsStatus()">
+						<hr>
+						<center>
+							<button ng-show="!isFriend" ng-click="addFriend()" type="button" class="btn btn-default">Add friend</button>
+							<button ng-show="isFriend" ng-click="unfriend()" type="button" class="btn btn-default">Unfriend</button>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
